@@ -7,6 +7,7 @@
 
 OLD_PATH=$LD_LIBRARY_PATH
 LD_LIBRARY_PATH="$(pwd)/libg2c":$LD_LIBRARY_PATH
-python create_dock.py pair_list.txt proteins docks preprocessed
+python extract_chains.py pair_list.txt proteins chains
+python create_dock.py pair_list.txt chains docks preprocessed
 LD_LIBRARY_PATH=$OLD_PATH
 exit 0
